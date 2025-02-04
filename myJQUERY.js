@@ -1,15 +1,26 @@
 $(document).ready(function () {
-    $("p").click(function () {
-      console.log("Para cicked");
-      $(this).hide();
-    });
+  $("p").on({
 
-    $("div").click(function () {
-      console.log("div cicked"); 
-      $("div").hide();
-    });
-
-    $('#pintu').click(function(){
-      console.log('Pintu clicked')
-    })
+    click: function () {
+      console.log("Clicked on ", this);
+    },
+    mouseleave: function () {
+      console.log("mouseleft on ", this);
+   
+    },
   });
+
+  $('#toggle').click(function(){
+    $('#text').toggle(1000)
+  })
+
+  $('#show').click(function(){
+      $('#text').fadeIn(2000)
+    })
+    
+    $('#hide').click(function(){
+      $('#text').fadeOut(200)
+  })
+
+
+});
